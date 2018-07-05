@@ -1,0 +1,13 @@
+<div class="margin40">
+  <% @posts.each do |post| %>
+    <div class="container">
+  <div class="card-body">
+      <%= link_to post.title, post_path(post.id) %>
+      <br />
+      <small>
+        Posted <%= time_ago_in_words(post.created_at) %> ago
+      </small>
+    </div>
+    </div>
+  <% end %>
+</div>
