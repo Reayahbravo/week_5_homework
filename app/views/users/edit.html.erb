@@ -1,0 +1,29 @@
+<h1>Edit</h1>
+
+<%= form_for @user, url: user_path(@user)  do |f| %>
+    <% if @user.errors.any? %>
+      <p>
+        <%= @user.errors.full_messages.join(', ') %>
+      </p>
+    <% end %>
+  
+    <div>
+      <%= f.label :first_name %>
+      <%= f.text_field(:first_name, value: @user.first_name, class: "hundyP") %>
+    </div>
+  
+    <div>
+      <%= f.label :last_name %>
+      <%= f.text_field(:last_name, value: @user.last_name, class: "hundyP") %>
+    </div>
+  
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+  
+  
+    <%= f.submit%>
+<% end %>
+
+ 

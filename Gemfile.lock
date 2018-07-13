@@ -45,6 +45,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (8.6.4)
       execjs
+    bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.0)
       msgpack (~> 1.0)
@@ -54,6 +55,7 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
+    cancancan (2.2.0)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -189,9 +191,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.1)
   byebug
+  cancancan
   coffee-rails (~> 4.2)
   cowsay
   faker
