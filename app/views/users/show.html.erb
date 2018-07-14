@@ -1,0 +1,24 @@
+<br clear="all">
+<h2><%= @user.current_password %></h2>
+
+<p><%= @user.new_password %></p>
+<p><%= @user.new_password_confirmation %></p>
+
+<% if user && new_password? redirect_to new_password_path %>
+
+    <% if can?(:edit, @current_password) %>
+        <div class="btn btn-outline-primary">
+            <%= link_to "Edit", edit_user_path(@user) %>
+        </div>
+    <% end %>
+      
+    <% if user_current_password? (can?(:edit, new_password)) %>
+        <small>
+            <%= link_to "Edit", new_password_path(@user, current_password), method: :edit, data: { confirm: "Is your password" } %>
+        </small>
+    <% end %>
+
+    <input type="Submit" class="btn btn-outline-primary" value="Submit">
+
+
+<% end %> 

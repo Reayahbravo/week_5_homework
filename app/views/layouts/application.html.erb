@@ -11,7 +11,7 @@
 
   <body>
     <nav id="myNav" class="navbar fixed-top navbar-dark bg-light navbar-right">
-      <div class="navbar-brand text-primary" href="#!">Blogs On Rails</div>
+      <div class="navbar-brand text-primary" href="#!">📝 Blog On Rails</div>
         
         <span class="floatRight">
           <%= link_to 'Home', home_path %>
@@ -23,10 +23,10 @@
           <%= link_to 'Posts', home_path %>
           |
           <% if current_user.present? %>
-          <div>
-            Hi, <%= link_to(current_user.first_name, edit_user_path(current_user.id)) %></div>
-            |
+          
+            🤔 Hi, <%= link_to(current_user.first_name, edit_user_path(current_user.id)) %></div>
             
+            |
               <%= link_to('Sign Out', session_path, method: :delete) %>
           <% else %>
               <%= link_to('Sign In', new_session_path) %>
@@ -37,8 +37,8 @@
         </span>
       </div>   
     </nav>
-
-    <div class="container-fluid">
+    <br clear="all">
+    <div class="container-fluid marginTop">
       <% flash.each do |type, message| %>
         <div class="alert alert-<%= type %> alert-dismissible fade show">
           <%= message %>

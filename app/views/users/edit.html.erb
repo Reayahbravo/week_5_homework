@@ -1,5 +1,7 @@
-<h1>Edit</h1>
+<br clear="all">
 
+<div class="margin50">
+<h1>Edit your information</h1>
 <%= form_for @user, url: user_path(@user)  do |f| %>
     <% if @user.errors.any? %>
       <p>
@@ -11,19 +13,45 @@
       <%= f.label :first_name %>
       <%= f.text_field(:first_name, value: @user.first_name, class: "hundyP") %>
     </div>
-  
+
+    <br clear="all">
+
     <div>
       <%= f.label :last_name %>
       <%= f.text_field(:last_name, value: @user.last_name, class: "hundyP") %>
     </div>
   
+    <br clear="all">
+
     <div>
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field(:email, class: "hundyP") %>
     </div>
   
+    <br clear="all">
+
+    <div>
+      <%= f.label :current_password %>
+      <%= f.password_field(:current_password, class: "hundyP") %>
+    </div>
   
-    <%= f.submit%>
+    <br clear="all">
+
+    <div>
+      <%= f.label :new_password %>
+      <%= f.password_field(:new_password, class: "hundyP") %>
+    </div>
+  
+    <br clear="all">
+
+    <div>
+      <%= f.label :new_password_confirmation %>
+      <%= f.password_field(:new_password_confirmation, class: "hundyP") %>
+    </div>
+  
+    <br clear="all">
+  
+    <%= f.submit"Submit"%>
 <% end %>
 
  
